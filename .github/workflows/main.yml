@@ -26,8 +26,8 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/danielopezh/helm-chart.git
-          cd helm-chart
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/danielopezh/comments-helm-chart.git
+          cd comments-helm-chart
           sed -i '/backendData:/,/database:/ { s/tag: [0-9]*/tag: ${{ github.run_number }}/; }' comments-chart/values.yaml
           git add comments-chart/values.yaml
           git commit -m "Update backend-data tag to ${{ github.run_number }}"
