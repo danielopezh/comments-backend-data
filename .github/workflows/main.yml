@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git clone https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository_owner }}/helm-chart.git
+          git clone https://${{ secrets.GH_TOKEN }}@github.com/danielopezh/helm-chart.git
           cd helm-chart
           sed -i '/backendData:/,/database:/ { s/tag: [0-9]*/tag: ${{ github.run_number }}/; }' comments-chart/values.yaml
           git add comments-chart/values.yaml
