@@ -30,5 +30,5 @@ statefulset:
   enabled: false
 
 env:
-  - name: MONGO_URL
+  - name: MONGO_URI
     value: "mongodb://database:27017/comments"
