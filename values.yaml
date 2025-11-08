@@ -1,1 +1,34 @@
-tag: 3
+name: backend-data
+namespace: daniel-lopez-fisag-dev
+
+image:
+  repository: danielopezh/comments-backend-data
+  tag: "{{ tag }}"
+
+replicas: 1
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+service:
+  enabled: true
+  port: 80
+  targetPort: 3001
+
+route:
+  enabled: false
+
+hpa:
+  enabled: false
+
+statefulset:
+  enabled: false
+
+env:
+  - name: MONGO_URL
+    value: "mongodb://database:27017/comments"
