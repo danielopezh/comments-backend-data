@@ -65,4 +65,4 @@ jobs:
 
       - name: Deploy Backend Data
         run: |
-          helm upgrade --install backend-data oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME }}/comments-chart --version 18 --values values.yaml
+          helm upgrade --install backend-data oci://registry-1.docker.io/${{ secrets.DOCKER_USERNAME }}/comments-chart --version 19 --values values.yaml
